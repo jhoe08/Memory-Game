@@ -6,8 +6,13 @@ var memoryGameApp = angular.module('memoryGameApp', []);
 
 
 memoryGameApp.factory('game', function() {
-  var tileNames = ['8-ball', 'kronos', 'baked-potato', 'dinosaur', 'rocket', 'skinny-unicorn',
-    'that-guy', 'zeppelin'];
+  // var tileNames = ['8-ball', 'kronos', 'baked-potato', 'dinosaur', 'rocket', 'skinny-unicorn', 'that-guy', 'zeppelin'];
+
+  let tileNames = [];
+
+  for (let index = 1; index < 19; index++) {
+    tileNames.push(index)
+  }
 
   return new Game(tileNames);
 });
@@ -29,10 +34,10 @@ memoryGameApp.directive('mgCard', function() {
     // and then either create a mg-card.html file with the content or add
     // <script type="text/ng-template" id="mg-card.html">.. template here.. </script> element to
     // index.html
-    template: '<div class="container">' +
+    template: '<div class="container asdf">' +
                 '<div class="card" ng-class="{flipped: tile.flipped}">' +
                   '<img class="front" ng-src="img/back.png">' +
-                  '<img class="back" ng-src="img/{{tile.title}}.png">' +
+                  '<img class="back" ng-src="img/pl/{{tile.title}}.jpg">' +
                 '</div>' +
               '</div>',
     scope: {

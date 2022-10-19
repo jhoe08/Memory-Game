@@ -59,6 +59,8 @@ div {
   -ms-transform: rotateY( 180deg );
   -o-transform: rotateY( 180deg );
   transform: rotateY( 180deg );
+
+  object-fit: cover;
 }
 
 .message {
